@@ -1,0 +1,11 @@
+
+# The root matcher used to start rendering in Flow, when fusionPath is set to "root"
+#
+
+root = Neos.Fusion:Case
+root {
+    controllerAction {
+        condition = true
+        type = ${request.controllerPackageKey + ':' + request.controllerName + 'Controller.' + request.controllerActionName}
+    }
+}

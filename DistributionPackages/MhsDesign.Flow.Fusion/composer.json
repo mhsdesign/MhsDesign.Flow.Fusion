@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "mhsdesign/flow-fusion",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MhsDesign\\Flow\\Fusion\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "MhsDesign.Flow.Fusion"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+
+prototype(MhsDesign.Flow.Fusion:AppleController.index) < prototype(MhsDesign.Flow.Fusion:Default) {
+
+    head {
+        titleTag.content = 'A list of apples'
+    }
+
+    body {
+
+        renderer = afx`
+            <h1>A list of apples</h1>
+            <ul @if.condition={apples}>
+                <Neos.Fusion:Loop items={apples} itemName="apple">
+                    <li>
+                        <Neos.Fusion:Link.Action href.action="show" href.arguments={{apple: apple}}>{apple.name}</Neos.Fusion:Link.Action>
+                        <Neos.Fusion:Link.Action href.action="edit" href.arguments={{apple: apple}}>Edit</Neos.Fusion:Link.Action>
+                        <Neos.Fusion.Form:Form form.target.action="delete" form.target.arguments={{apple: apple}}>
+                            <Neos.Fusion.Form:Submit attributes.value="Delete" />
+                        </Neos.Fusion.Form:Form>
+                    </li>
+                </Neos.Fusion:Loop>
+            </ul>
+            <p @if.condition={!apples}>No apples created yet.</p>
+            <p><Neos.Fusion:Link.Action href.action="new">Create a new apple</Neos.Fusion:Link.Action></p>
+        `
+
+    }
+
+}

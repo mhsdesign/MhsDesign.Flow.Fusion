@@ -1,0 +1,6 @@
+# for the Configuration Manager at Neos.Flow/Classes/Mvc/ViewConfigurationManager.php
+-
+  # requestFilter: 'https://github.com/neos/neos-development-collection/blob/master/Neos.Neos/Configuration/Views.yaml#L2'
+  viewObjectName: 'Neos\Fusion\View\FusionView'
+  options:
+    fusionPath: "root"

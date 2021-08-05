@@ -1,0 +1,28 @@
+
+prototype(MhsDesign.Flow.Fusion.AppleController.edit) < prototype(MhsDesign.Flow.Fusion:Default) {
+
+    head {
+        titleTag.content = ${'Edit apple "' + apple.name + '"'}
+    }
+
+    body {
+
+        renderer = afx`
+            <h1>Edit apple "{apple.name}"</h1>
+            <Neos.Fusion:Link.Action href.action="index">Back to Index</Neos.Fusion:Link.Action>
+            <Neos.Fusion.Form:Form form.target.action="update" form.data.apple={apple} attributes.name="apple">
+                <ol>
+                    <li>
+                        <label for="name">Name</label>
+                        <Neos.Fusion.Form:Textfield field.name="apple[name]" attributes.id="name" />
+                    </li>
+
+                    <li>
+                        <Neos.Fusion.Form:Submit attributes.value="Update" />
+                    </li>
+                </ol>
+            </Neos.Fusion.Form:Form>
+        `
+    }
+
+}

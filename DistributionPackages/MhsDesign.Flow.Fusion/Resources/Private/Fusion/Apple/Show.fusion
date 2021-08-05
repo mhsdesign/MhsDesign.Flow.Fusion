@@ -1,0 +1,24 @@
+
+prototype(MhsDesign.Flow.Fusion:AppleController.show) < prototype(MhsDesign.Flow.Fusion:Default) {
+
+    head {
+        titleTag.content = ${'Show apple "' + apple.name + '"'}
+    }
+
+    body {
+
+        renderer = afx`
+            <h1>Show apple "{apple.name}"</h1>
+            <Neos.Fusion:Link.Action href.action="index">Back to Index</Neos.Fusion:Link.Action>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{apple.name}</td>
+                </tr>
+            </table>
+            <Neos.Fusion:Link.Action href.action="index">Back</Neos.Fusion:Link.Action>
+        `
+
+    }
+
+}

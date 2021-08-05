@@ -1,0 +1,30 @@
+
+prototype(MhsDesign.Flow.Fusion:AppleController.new) < prototype(MhsDesign.Flow.Fusion:Default) {
+
+    head {
+        titleTag.content = 'New apple'
+    }
+
+    body {
+
+        renderer = afx`
+            <h1>New apple</h1>
+
+            <p>Just fill out the following form to create a new apple:</p>
+
+            <Neos.Fusion.Form:Form form.target.action="create">
+                <ol>
+                    <li>
+                        <label for="name">Name</label>
+                        <Neos.Fusion.Form:Textfield field.name="newApple[name]" attributes.id="name" />
+                    </li>
+
+                    <li>
+                        <Neos.Fusion.Form:Submit attributes.value="Create" />
+                    </li>
+                </ol>
+            </Neos.Fusion.Form:Form>
+        `
+    }
+
+}
